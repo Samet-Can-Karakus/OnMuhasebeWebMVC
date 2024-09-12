@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model OnMuhasebe_Arayuz2.Models.Date
+
+@{
+	ViewData["Title"] = "Yeni Sorgu Kaydı";
+}
+
+<h2>Yeni Sorgu Kaydı</h2>
+
+<form asp-action="Create" method="post">
+
+	<div class="form-group">
+		<label asp-for="StartDate" class="control-label">Başlangıç Tarihi</label>
+		<input asp-for="StartDate" class="form-control" type="date" />
+		<span asp-validation-for="StartDate" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="EndDate" class="control-label">Bitiş Tarihi</label>
+		<input asp-for="EndDate" class="form-control" type="date" />
+		<span asp-validation-for="EndDate" class="text-danger"></span>
+	</div>
+	</div>
+	<input type="submit" value="Kaydet" class="btn btn-primary" />
+</form>
+<p>Net Kazanç: @ViewBag.TotalRecord</p>

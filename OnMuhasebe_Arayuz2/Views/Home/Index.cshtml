@@ -1,0 +1,18 @@
+﻿@model IEnumerable<OnMuhasebe_Arayuz2.Models.IncomeRecord>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Click the button below to view Income Records.</p>
+    <a href="@Url.Action("Index", "IncomeRecord")" class="btn btn-primary">Income Records</a>
+</div>
+<div class="text-center">
+    <p>Click the button below to view Expense Records.</p>
+    <a href="@Url.Action("Index", "ExpenseRecord")" class="btn btn-primary">Expense Records</a>
+</div>
+<div class="text-center">
+    <p>Click the button below to view Total Records.</p>
+    <a href="@Url.Action("Index", "TotalRecord")" class="btn btn-primary">Total Records</a>
+</div>

@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<OnMuhasebe_Arayuz2.Models.IncomeRecord>
+
+@{
+    ViewData["Title"] = "Gelir Kayıtları";
+}
+
+<h2>Gelir Kayıtları</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Miktar</th>
+            <th>Değer</th>
+            <th>Tarih</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ad</td>
+                <td>@item.miktar</td>
+                <td>@item.deger</td>
+                <td>@item.tarih.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-warning">Düzenle</a> |
+                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Yeni Kayıt Ekle</a>

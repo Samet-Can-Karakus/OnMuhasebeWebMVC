@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<OnMuhasebe_Arayuz2.Models.TotalRecord>
+
+@{
+    ViewData["Title"] = "Net Kayıtları";
+}
+
+<h2>Net Kayıtları</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sorgu Tarihi</th>
+            <th>Toplam Gelir</th>
+            <th>Toplam Gider</th>
+            <th>Net</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SorguTarihi.ToShortDateString()</td>
+                <td>@item.ToplamGelir</td>
+                <td>@item.ToplamGider</td>
+                <td>@item.Net</td>                
+            </tr>
+        }
+    </tbody>
+</table>
+<p> Kazanç: @ViewBag.IncomeRecord</p>
+
+<a asp-action="Create" class="btn btn-primary">Yeni Sorgu Ekle</a>

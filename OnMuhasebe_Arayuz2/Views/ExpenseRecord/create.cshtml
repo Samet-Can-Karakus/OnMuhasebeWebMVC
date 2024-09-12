@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model OnMuhasebe_Arayuz2.Models.ExpenseRecord
+
+@{
+    ViewData["Title"] = "Yeni Gider Kaydı";
+}
+
+<h2>Yeni Gider Kaydı</h2>
+
+<form asp-action="Create">
+
+    <div class="form-group">
+        <label asp-for="ad" class="control-label">Ad</label>
+        <input asp-for="ad" class="form-control" />
+        <span asp-validation-for="ad" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="miktar" class="control-label">Miktar</label>
+        <input asp-for="miktar" class="form-control" />
+        <span asp-validation-for="miktar" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="deger" class="control-label">Değer</label>
+        <input asp-for="deger" class="form-control" />
+        <span asp-validation-for="deger" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="tarih" class="control-label">Tarih</label>
+        <input asp-for="tarih" class="form-control" type="date" />
+        <span asp-validation-for="tarih" class="text-danger"></span>
+    </div>
+    </div>
+    <input type="submit" value="Kaydet" class="btn btn-primary" />
+</form>
